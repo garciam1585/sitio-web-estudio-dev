@@ -8,16 +8,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const title = container.dataset.title || "También puede interesarle";
 
-    const url = `https://blog.mgabogado.com.ar/feeds/posts/default/-/${encodeURIComponent(label)}?alt=json`;
+   
+const url = `https://api.allorigins.win/get?url=${encodeURIComponent(`https://blog.mgabogado.com.ar/feeds/posts/default/-/${label}?alt=json`)}`;
+   fetch(url)
+    .then(r => r.json())
+    .then(data => {
+        // Al usar el proxy, el contenido real del feed está dentro de 'data.contents'
+        // Por eso debemos parsearlo primero
+        const feedData = JSON.parse(data.contents);
 
-    fetch(url)
-        .then(r => r.json())
-        .then(data => {
+        // Ahora usamos 'feedData' en lugar de 'data' para validar la existencia de posts
+        if (!feedData.feed.entry) {
+            container.innerHTML = "";
+            return;
+        }
 
-            if (!data.feed.entry) {
-                container.innerHTML = "";
-                return;
-            }
+        // A partir de aquí, el resto de tu código debe usar 'feedData' 
+        // en lugar de 'data' para acceder a los artículos
+        const entries = feedData.feed.entry;
+        // ... (resto de tu lógica)
+    });
 
             let html = `<h2 class="related-title">${title}</h2><div class="related-grid">`;
 
