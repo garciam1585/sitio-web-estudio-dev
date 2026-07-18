@@ -1966,3 +1966,11 @@ button {
     color:#e8b923;
 
 }
+.related-grid{
+    justify-content:center;
+}
+
+.related-card{
+    width:100%;
+    max-width:380px;
+}
