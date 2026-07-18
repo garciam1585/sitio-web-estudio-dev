@@ -36,11 +36,13 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scroll-header');
     }
     
-    // Mostrar/ocultar botón scroll to top
-    if (window.scrollY >= 560) {
-        scrollTop.classList.add('show');
-    } else {
-        scrollTop.classList.remove('show');
+   // Mostrar/ocultar botón scroll to top
+    if (scrollTop) { // <--- Esta verificación es la clave
+        if (window.scrollY >= 560) {
+            scrollTop.classList.add('show');
+        } else {
+            scrollTop.classList.remove('show');
+        }
     }
 });
 
@@ -69,12 +71,14 @@ const scrollActive = () => {
 window.addEventListener('scroll', scrollActive);
 
 // =============== SCROLL TO TOP ===============
-scrollTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (scrollTop) { // <--- Verificamos antes de añadir el evento
+    scrollTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
-});
+}
 
 // =============== ANIMACIONES AOS (Scroll Animations) ===============
 const observerOptions = {
