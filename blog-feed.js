@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 }else{
 
-                    image = media ? media.url : "images/martin-garcia.webp";
+                   image = media ? media.url : "/images/blog-default.webp";
 
                 }
 
