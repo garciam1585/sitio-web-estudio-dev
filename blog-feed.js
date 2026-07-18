@@ -23,7 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
             const fecha = new Date(post.published.$t).toLocaleDateString("es-AR", { day: "numeric", month: "long", year: "numeric" });
             let resumen = post.summary ? post.summary.$t.replace(/<[^>]*>?/gm, '').substring(0, 140) + "..." : "";
 // REEMPLAZALA POR ESTA:
-            let imagen = post.media$thumbnail ? post.media$thumbnail.url.replace(/\/s\d+(-c)?\//, "/s1600/") : "images/blog-default.webp";
+           let imagen = "images/blog-default.webp";
+
+if (post.content && post.content.$t) {
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(post.content.$t, "text/html");
+
+    const img = doc.querySelector("img");
+
+    if (img) {
+        imagen = img.src.replace(/\/s\d+(-c)?\//, "/s1600/");
+    }
+
+}
             html += `<article class="related-card"><img src="${imagen}" alt="${titulo}"><div class="related-content"><span class="related-date">${fecha}</span><h3>${titulo}</h3><p>${resumen}</p><a href="${enlace}" class="related-button">Leer artículo →</a></div></article>`;
         });
         html += "</div>";
