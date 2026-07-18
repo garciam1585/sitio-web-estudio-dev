@@ -1916,10 +1916,9 @@ button {
     height: 220px;
     object-fit: cover;
     object-position: center;
-    /* Agregá estas líneas para mejorar la calidad del renderizado */
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    backface-visibility: hidden;
+    /* Eliminamos las líneas de image-rendering */
+    image-rendering: auto; 
+    -webkit-backface-visibility: visible;
 }
 
 .related-content{
