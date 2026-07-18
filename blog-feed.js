@@ -55,11 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     imagen=post.media$thumbnail.url.replace("s72-c","s800");
 
-                }else{
-
-                   image = media ? media.url : "/images/blog-default.webp";
-
-                }
+               } else {
+    // Usamos la variable correcta: 'imagen'
+    imagen = "/images/blog-default.webp"; 
+}
 
                 html+=`
 
