@@ -1911,14 +1911,15 @@ button {
 
 }
 
-.related-card img{
-
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
-
+.related-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    /* Agregá estas líneas para mejorar la calidad del renderizado */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
 }
 
 .related-content{
