@@ -33,9 +33,13 @@ if (post.content && post.content.$t) {
     const img = doc.querySelector("img");
 
     if (img) {
-        imagen = img.src.replace(/\/s\d+(-c)?\//, "/s1600/");
-    }
+        imagen = img.src;
 
+        // Pedimos la versión grande de Blogger
+        imagen = imagen
+            .replace(/\/s\d+(-c)?\//, "/s1600/")
+            .replace(/=s\d+(-c)?$/, "=s1600");
+    }
 }
             html += `<article class="related-card"><img src="${imagen}" alt="${titulo}"><div class="related-content"><span class="related-date">${fecha}</span><h3>${titulo}</h3><p>${resumen}</p><a href="${enlace}" class="related-button">Leer artículo →</a></div></article>`;
         });
