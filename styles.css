@@ -1871,3 +1871,98 @@ button {
         margin: 0;
     }
 }
+.related-title{
+
+    font-size:2rem;
+
+    margin-bottom:30px;
+
+    color:#1a5f7a;
+
+}
+
+.related-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+}
+
+.related-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.related-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.related-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.related-content{
+
+    padding:25px;
+
+}
+
+.related-date{
+
+    font-size:.9rem;
+
+    color:#888;
+
+}
+
+.related-content h3{
+
+    margin:15px 0;
+
+    color:#1a5f7a;
+
+}
+
+.related-content p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+}
+
+.related-button{
+
+    font-weight:bold;
+
+    color:#1a5f7a;
+
+}
+
+.related-button:hover{
+
+    color:#e8b923;
+
+}
