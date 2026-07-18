@@ -1881,15 +1881,6 @@ button {
 
 }
 
-.related-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-    gap:30px;
-
-}
 
 .related-card{
 
@@ -1967,10 +1958,12 @@ button {
 
 }
 .related-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(380px,380px));
     justify-content:center;
+    gap:30px;
 }
 
 .related-card{
     width:100%;
-    max-width:380px;
 }
