@@ -1872,13 +1872,22 @@ button {
     }
 }
 .related-title{
-
     font-size:2rem;
-
-    margin-bottom:30px;
-
+    font-weight:700;
     color:#1a5f7a;
+    text-align:center;
+    margin-bottom:40px;
+    position:relative;
+}
 
+.related-title::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:4px;
+    background:#e8b923;
+    margin:15px auto 0;
+    border-radius:999px;
 }
 
 
